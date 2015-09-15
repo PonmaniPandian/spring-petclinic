@@ -170,6 +170,16 @@ public abstract class AbstractClinicServiceTests {
 	    assertThat(vet.getSpecialties().get(0).getName()).isEqualTo("dentistry");
 	    assertThat(vet.getSpecialties().get(1).getName()).isEqualTo("surgery");
 	}
+	
+	@Test
+	public void shouldFindVets1() {
+	    Collection<Vet> vets = this.clinicService.findVets();	
+	    Vet vet = EntityUtils.getById(vets, Vet.class, 3);
+	    assertThat(vet.getLastName()).isEqualTo("Douglas1");
+	    assertThat(vet.getNrOfSpecialties()).isEqualTo(3);
+	    assertThat(vet.getSpecialties().get(0).getName()).isEqualTo("dentistry1");
+	    assertThat(vet.getSpecialties().get(1).getName()).isEqualTo("surgery1");
+	}
 
 	@Test
 	@Transactional
