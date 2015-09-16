@@ -1,0 +1,6 @@
+---
+applications:
+- name: PetClinic-cogtechi
+  memory: 1024M
+  host: PetClinic-cogtechi
+  path: target/petclinic.war
